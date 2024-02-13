@@ -66,7 +66,7 @@ const createPlace = async (req, res, next) => {
     );
   }
 
-  const { title, description, address, creator } = req.body;
+  const { title, description, address } = req.body;
 
   // Placeholder coordinates or omit location entirely if not needed
   const coordinates = { lat: 0, lng: 0 };
@@ -77,12 +77,12 @@ const createPlace = async (req, res, next) => {
     address,
     location: coordinates, // Assigning placeholder coordinates
     image: req.file.path,
-    creator,
+    creator: req.userData.userId,
   });
 
   let user;
   try {
-    user = await User.findById(creator);
+    user = await User.findById(req.userData.userId);
   } catch (err) {
     const error = new HttpError(
       "Creating place failed, please try again.",
