@@ -1,8 +1,8 @@
-const axios = require('axios');
+const axios = require("axios");
 
-const HttpError = require('../models/http-error');
-
-const API_KEY = 'AIzaSyDORT2sxCKSBIX-qAlmxFTPP56hjTvz4w4';
+const HttpError = require("../models/http-error");
+ 
+const API_KEY = process.env.GOOGLE_API_KEY;
 
 async function getCoordsForAddress(address) {
   try {
@@ -12,13 +12,13 @@ async function getCoordsForAddress(address) {
       )}&key=${API_KEY}`
     );
 
-    console.log('Response data:', response.data);
+    console.log("Response data:", response.data);
 
     const data = response.data;
 
-    if (!data || data.status === 'ZERO_RESULTS') {
+    if (!data || data.status === "ZERO_RESULTS") {
       throw new HttpError(
-        'Could not find location for the specified address.',
+        "Could not find location for the specified address.",
         422
       );
     }
@@ -27,16 +27,16 @@ async function getCoordsForAddress(address) {
 
     if (!coordinates) {
       throw new HttpError(
-        'Could not extract coordinates from the response data.',
+        "Could not extract coordinates from the response data.",
         422
       );
     }
 
     return coordinates;
   } catch (error) {
-    console.error('Error fetching coordinates:', error);
+    console.error("Error fetching coordinates:", error);
     throw new HttpError(
-      'Something went wrong, could not fetch coordinates for the specified address.',
+      "Something went wrong, could not fetch coordinates for the specified address.",
       500
     );
   }
