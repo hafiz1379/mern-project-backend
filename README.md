@@ -58,10 +58,10 @@ You can check out a live demo of the application [here](https://mern-project-fro
 
 ## Screenshots
 
-![All Users](./src/assets/image.png)
-![Add PLace](./src/assets/image-1.png)
-![Login](./src/assets/image-2.png)
-![My Places](./src/assets/image-3.png)
+![Login](.assets/image-2.png)
+![All Users](.assets/image.png)
+![Add PLace](.assets/image-1.png)
+![My Places](.assets/image-3.png)
 
 ## Frontend Repository
 
