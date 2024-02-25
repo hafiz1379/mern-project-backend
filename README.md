@@ -78,5 +78,8 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## Author
 
-[Hafizullah Rasa](https://github.com/hafiz1379)
+👤 **Hafizullah Rasa**
+
+- GitHub: [Hafiz Rasa](https://github.com/hafiz1379)
+- LinkedIn: [Hafiz Rasa](https://www.linkedin.com/in/hafiz1379/)
 
